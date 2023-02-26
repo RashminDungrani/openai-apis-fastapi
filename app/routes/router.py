@@ -4,6 +4,7 @@ from app.routes import (
     grammer,
     natural_language_to_code,
     q_and_a,
+    sql_translate,
     summarize,
     text_to_command,
     translate,
@@ -21,3 +22,4 @@ api_router.include_router(
 )
 api_router.include_router(text_to_command.router, prefix="/text_to_command", tags=["Text to Command"])
 api_router.include_router(translate.router, prefix="/translate", tags=["Translate"])
+api_router.include_router(sql_translate.router, prefix="/sql_translate", tags=["SQL Translate"])
