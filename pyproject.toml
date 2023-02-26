@@ -8,6 +8,9 @@ packages = [{include = "app"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+fastapi = "^0.92.0"
+openai = "^0.26.5"
+uvicorn = "^0.20.0"
 
 
 [build-system]
