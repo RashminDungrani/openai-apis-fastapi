@@ -1,6 +1,6 @@
 from fastapi.routing import APIRouter
 
-from app.routes import grammer, q_and_a
+from app.routes import grammer, q_and_a, summarize
 
 api_router = APIRouter(prefix="/api")
 
@@ -8,3 +8,4 @@ api_router = APIRouter(prefix="/api")
 
 api_router.include_router(q_and_a.router, prefix="/q_and_a", tags=["Question & Answers"])
 api_router.include_router(grammer.router, prefix="/grammer", tags=["Grammer"])
+api_router.include_router(summarize.router, prefix="/summarize", tags=["Summarize"])
