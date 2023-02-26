@@ -28,7 +28,6 @@ async def translate_v1(
         model="text-davinci-003",
         prompt=f"Translate this into {langauge}: \n\n{input}",
         api_end_point="/api/translate/v1",
-        # If Traffic is big enough to not overcross car then take helicopter else take bike or car
         temperature=0.3,
         max_tokens=100,
         top_p=1.0,

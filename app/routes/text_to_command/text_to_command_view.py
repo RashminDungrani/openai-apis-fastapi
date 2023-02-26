@@ -25,7 +25,6 @@ async def text_to_command_v1(query: str = Query(min_length=3)):
         model="text-davinci-003",
         prompt=f"Convert this text to a programmatic command:\n\nExample: Ask Constance if we need some bread\n\nOutput: send-msg `find constance` Do we need some bread?\n\n{query}",
         api_end_point="/api/text_to_command/v1",
-        # If Traffic is big enough to not overcross car then take helicopter else take bike or car
         temperature=0,
         max_tokens=100,
         top_p=1,
