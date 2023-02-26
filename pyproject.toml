@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "openai-apis-fastapi"
+version = "0.1.0"
+description = "OpenAI APIs in FastAPI application"
+authors = ["Rashmin Dungrani <rashmin8248@gmail.com>"]
+readme = "README.md"
+packages = [{include = "app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
