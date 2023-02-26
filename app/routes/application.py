@@ -10,7 +10,7 @@ from app.core.settings import settings
 
 # from app.app_paths import app_paths
 # from app.routes.lifetime import register_shutdown_event, register_startup_event
-from app.routes.router import text_completion_api_router
+from app.routes.router import image_generation_api_router, text_completion_api_router
 
 # from fastapi.staticfiles import StaticFiles
 
@@ -58,6 +58,7 @@ def get_app() -> FastAPI:
 
     # Main router for the API.
     app.include_router(router=text_completion_api_router)
+    app.include_router(router=image_generation_api_router)
 
     # mount static posts
     app.mount("/static", StaticFiles(directory=app_paths.static), name="static")

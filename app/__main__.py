@@ -4,6 +4,7 @@ from app.core.settings import settings
 
 
 def main() -> None:
+
     """Entrypoint of the application."""
 
     uvicorn.run(
