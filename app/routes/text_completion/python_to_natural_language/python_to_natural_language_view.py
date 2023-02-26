@@ -12,18 +12,17 @@ router = APIRouter()
 
 
 @router.get("/v1")
-async def movie_to_emoji_v1(movie_name: str = Query(min_length=3)):
+async def python_to_natural_language_v1(python_code: str = Query(min_length=3)):
 
     response = openai_api_handle(
         model="code-davinci-002",
-        prompt=f"Convert movie titles into emoji.\n\nBack to the Future: 👨👴🚗🕒 \nBatman: 🤵🦇 \nTransformers: 🚗🤖 \n{movie_name}: ",
-        api_end_point="/api/movie_to_emoji/v1",
-        temperature=0.8,
-        max_tokens=60,
+        prompt=f"# Python 3\n{python_code}\n\n# Explanation of what the code does\n\n#",
+        api_end_point="/api/text_completion/python_to_natural_language/v1",
+        temperature=0,
+        max_tokens=64,
         top_p=1.0,
         frequency_penalty=0.0,
         presence_penalty=0.0,
-        stop=["\n"],
     )
     if response.openai_response:
         answer = response.openai_response.choices[0].text.strip()

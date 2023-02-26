@@ -12,12 +12,12 @@ router = APIRouter()
 
 
 @router.get("/v1")
-async def summarize_v1(query: str = Query(min_length=3)):
+async def grammer_v1(query: str = Query(min_length=3)):
 
     response = openai_api_handle(
         model="text-davinci-003",
-        prompt=f"Summarize this for a second-grade student:\n\n{query}",
-        api_end_point="/api/summarize/v1",
+        prompt=f"Correct this to standard English:\n\n{query}",
+        api_end_point="/api/text_completion/grammer/v1",
         temperature=0.7,
         max_tokens=64,
         top_p=1.0,

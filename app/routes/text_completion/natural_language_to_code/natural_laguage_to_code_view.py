@@ -31,7 +31,7 @@ import util
 
 Create an OpenAI completion starting from the prompt "Once upon an AI", no more than 5 tokens. Does not include the prompt.
 """,
-        api_end_point="/api/natural_language_to_code/v1",
+        api_end_point="/api/text_completion/natural_language_to_code/v1",
         temperature=0,
         max_tokens=64,
         top_p=1.0,

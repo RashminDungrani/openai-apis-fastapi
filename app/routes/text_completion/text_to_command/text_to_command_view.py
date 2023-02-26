@@ -12,10 +12,7 @@ router = APIRouter()
 
 
 @router.get("/v1")
-async def translate_v1(
-    langauge: str = Query(min_length=2),
-    input: str = Query(min_length=3),
-):
+async def text_to_command_v1(query: str = Query(min_length=3)):
     #     completions = openai.Completion.create(
     #     engine="davinci",
     #     prompt=prompt,
@@ -26,13 +23,13 @@ async def translate_v1(
     # )
     response = openai_api_handle(
         model="text-davinci-003",
-        prompt=f"Translate this into {langauge}: \n\n{input}",
-        api_end_point="/api/translate/v1",
-        temperature=0.3,
+        prompt=f"Convert this text to a programmatic command:\n\nExample: Ask Constance if we need some bread\n\nOutput: send-msg `find constance` Do we need some bread?\n\n{query}",
+        api_end_point="/api/text_completion/text_to_command/v1",
+        temperature=0,
         max_tokens=100,
-        top_p=1.0,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
+        top_p=1,
+        frequency_penalty=0.2,
+        presence_penalty=0,
         # stop=["\n"],
     )
     if response.openai_response:

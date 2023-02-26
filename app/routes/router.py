@@ -1,6 +1,6 @@
 from fastapi.routing import APIRouter
 
-from app.routes import (
+from app.routes.text_completion import (
     grammer,
     movie_to_emoji,
     natural_language_to_code,
@@ -12,20 +12,16 @@ from app.routes import (
     translate,
 )
 
-api_router = APIRouter(prefix="/api")
+text_completion_api_router = APIRouter(prefix="/api/text_completion", tags=["Text Completion"])
 
 # api_router.include_router(token.router, tags=["Token"], include_in_schema=True)
 
-api_router.include_router(q_and_a.router, prefix="/q_and_a", tags=["Question & Answers"])
-api_router.include_router(grammer.router, prefix="/grammer", tags=["Grammer"])
-api_router.include_router(summarize.router, prefix="/summarize", tags=["Summarize"])
-api_router.include_router(
-    natural_language_to_code.router, prefix="/natural_language_to_code", tags=["Natural language to code"]
-)
-api_router.include_router(text_to_command.router, prefix="/text_to_command", tags=["Text to Command"])
-api_router.include_router(translate.router, prefix="/translate", tags=["Translate"])
-api_router.include_router(sql_translate.router, prefix="/sql_translate", tags=["SQL Translate"])
-api_router.include_router(
-    python_to_natural_language.router, prefix="/python_to_natural_language", tags=["Python to Natural language"]
-)
-api_router.include_router(movie_to_emoji.router, prefix="/movie_to_emoji", tags=["Movie to Emoji"])
+text_completion_api_router.include_router(q_and_a.router, prefix="/q_and_a")
+text_completion_api_router.include_router(grammer.router, prefix="/grammer")
+text_completion_api_router.include_router(summarize.router, prefix="/summarize")
+text_completion_api_router.include_router(natural_language_to_code.router, prefix="/natural_language_to_code")
+text_completion_api_router.include_router(text_to_command.router, prefix="/text_to_command")
+text_completion_api_router.include_router(translate.router, prefix="/translate")
+text_completion_api_router.include_router(sql_translate.router, prefix="/sql_translate")
+text_completion_api_router.include_router(python_to_natural_language.router, prefix="/python_to_natural_language")
+text_completion_api_router.include_router(movie_to_emoji.router, prefix="/movie_to_emoji")
