@@ -8,6 +8,7 @@ class AppPaths:
 
     # * app specific
     results: str = os.path.join(media, "results")
+    openai_responses_json: str = os.path.join(static, "json", "openai_responses.json")
 
 
 app_paths = AppPaths()
