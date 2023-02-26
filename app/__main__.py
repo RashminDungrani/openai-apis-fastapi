@@ -5,6 +5,7 @@ from app.core.settings import settings
 
 def main() -> None:
     """Entrypoint of the application."""
+
     uvicorn.run(
         "app.routes.application:get_app",
         workers=settings.workers_count,

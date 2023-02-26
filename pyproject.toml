@@ -11,6 +11,8 @@ python = "^3.11"
 fastapi = "^0.92.0"
 openai = "^0.26.5"
 uvicorn = "^0.20.0"
+pydantic = {extras = ["dotenv"], version = "^1.10.5"}
+ujson = "^5.7.0"
 
 
 [build-system]

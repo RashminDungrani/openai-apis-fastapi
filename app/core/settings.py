@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     """
 
     OPENAI_API_KEY: str = ""
+
+    fastapi_title: str = "Project Title"
+    fastapi_desc: str = "Project Description"
+    fastapi_version: str = "0.1.0"
+
     host: str = "192.168.1.237"
     # host: str = "0.0.0.0"
     port: int = 8000

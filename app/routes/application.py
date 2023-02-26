@@ -6,6 +6,7 @@ from fastapi.responses import UJSONResponse
 from fastapi.staticfiles import StaticFiles
 
 from app.app_paths import app_paths
+from app.core.settings import settings
 
 # from app.app_paths import app_paths
 # from app.routes.lifetime import register_shutdown_event, register_startup_event
@@ -24,9 +25,9 @@ def get_app() -> FastAPI:
     """
 
     app = FastAPI(
-        title="Object measurement APIs",
-        description="Object measurement using OpenCV and serving API with FastAPI",
-        version="0.1.0",
+        title=settings.fastapi_title,
+        description=settings.fastapi_desc,
+        version=settings.fastapi_version,
         docs_url="/api/docs",
         redoc_url="/api/redoc",
         openapi_url="/api/openapi.json",
