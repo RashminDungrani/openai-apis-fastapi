@@ -25,7 +25,7 @@ async def summarize_v1(query: str = Query(min_length=3)):
         presence_penalty=0.0,
     )
     if response.openai_response:
-        answer = response.openai_response.choices[0].text
+        answer = response.openai_response.choices[0].text.strip()
         return {"answer": answer}
 
     raise DetailedHTTPException()

@@ -21,7 +21,7 @@ async def question_and_answer_v1(question: str = Query(min_length=3)):
         stop=["\n"],
     )
     if response.openai_response:
-        answer = response.openai_response.choices[0].text
+        answer = response.openai_response.choices[0].text.strip()
         return {"answer": answer}
     raise DetailedHTTPException()
 
@@ -34,6 +34,6 @@ async def question_and_answer_v2(question: str = Query(min_length=3)):
         api_end_point="/api/q_and_a/v2",
     )
     if response.openai_response:
-        answer = response.openai_response.choices[0].text.strip()
+        answer = response.openai_response.choices[0].text.strip().strip()
         return {"answer": answer}
     raise DetailedHTTPException()
