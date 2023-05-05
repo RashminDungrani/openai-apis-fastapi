@@ -60,6 +60,6 @@ To work on a FastAPI project, you'll need to ensure that your environment is set
 
 ## 📄 Screenshot <a name = "screenshots"></a>
 
-![OpenAI APIs - Swagger UI](screenshots/OpenAI%20APIs%20-%20Swagger%20UI.png)
+![OpenAI APIs - Swagger UI](https://user-images.githubusercontent.com/48521608/236440552-4355f475-c268-4490-bbae-1bf3fe3a22a8.png)
 
 ### Show some 💗 and star the repo to support the project
